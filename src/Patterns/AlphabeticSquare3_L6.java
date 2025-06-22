@@ -17,16 +17,18 @@ public class AlphabeticSquare3_L6 {
 
             // Upar wala bhi sahi hai.
 
-            char ch;
-
-            if (i % 2 == 0) {
-                ch = (char) ('A' + i - 1); // Uppercase for even rows
-            } else {
-                ch = (char) ('a' + i - 1); // Lowercase for odd rows
-            }
+//            char ch;
+//
+//            if (i % 2 == 0) {
+//                ch = (char) ('A' + i - 1); // Uppercase for even rows
+//            } else {
+//                ch = (char) ('a' + i - 1); // Lowercase for odd rows
+//            }
 
             for (int j=1; j<=n; j++){
-                System.out.print(ch + " ");
+//                System.out.print(ch + " ");
+                if(i%2==1) System.out.print((char) (i+96) + " ");
+                else System.out.print((char) (i+64) + " ");
             }
             System.out.println();
         }
