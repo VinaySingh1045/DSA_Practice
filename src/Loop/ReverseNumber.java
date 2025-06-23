@@ -17,4 +17,4 @@ public class ReverseNumber {
         System.out.println(r);
     }
 }
-// you can see in the lecture 5 for notes in pdf.
+// you can see in the lecture 4 for notes in pdf --> Video Lecture: 5.
