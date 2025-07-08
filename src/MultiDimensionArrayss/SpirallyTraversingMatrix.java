@@ -43,3 +43,42 @@ public class SpirallyTraversingMatrix {
         }
     }
 }
+
+
+/*
+  ArrayList<Integer> result = new ArrayList<>();
+        int m = arr.length;
+        int n = arr[0].length;
+        int minRow = 0;
+        int maxRow = m - 1;
+        int minCol = 0;
+        int maxCol = n - 1;
+
+        while (minRow <= maxRow && minCol <= maxCol) {
+
+            for (int j = minCol; j <= maxCol; j++) {
+                result.add(arr[minRow][j]);
+            }
+            minRow++;
+
+            for (int i = minRow; i <= maxRow; i++) {
+                result.add(arr[i][maxCol]);
+            }
+            maxCol--;
+
+            if (minRow <= maxRow) {
+                for (int j = maxCol; j >= minCol; j--) {
+                    result.add(arr[maxRow][j]);
+                }
+                maxRow--;
+            }
+
+            if (minCol <= maxCol) {
+                for (int i = maxRow; i >= minRow; i--) {
+                    result.add(arr[i][minCol]);
+                }
+                minCol++;
+            }
+        }
+        return result;
+ */
