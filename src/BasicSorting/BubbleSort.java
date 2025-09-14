@@ -6,9 +6,11 @@ public class BubbleSort {
         int n = arr.length;
         System.out.println("Original Array: ");
         print(arr, n);
-//        System.out.println();
-//        method1(arr, n); // ye method ki time complexity O(n^3) jo ki bhaut karab hai.
+//      System.out.println();
+//      ye method ki time complexity O(n^2) jo ki bhaut karab hai.
+//      isi method ko notebook me se idhar pdhne ko bola hai as a first method
         System.out.println();
+//      method1(arr, n);
         method2(arr, n);
     }
 
@@ -25,7 +27,7 @@ public class BubbleSort {
             }
             if(swap == 0) break;
         }
-        System.out.println("Reverse Array: ");
+        System.out.println("Sort Array: ");
         print(arr, n);
     }
 
@@ -39,7 +41,7 @@ public class BubbleSort {
                 }
             }
         }
-        System.out.println("Reverse Array: ");
+        System.out.println("Sort Array: ");
         print(arr, n);
     }
 

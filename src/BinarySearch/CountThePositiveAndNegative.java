@@ -2,7 +2,7 @@ package BinarySearch;
 
 public class CountThePositiveAndNegative {
     public static void main(String[] args) {
-        int[] arr = { -3, -2, -1, 0, 0, 1, 2 }; // You can change this input
+        int[] arr = { -3, -2, -1, 0, 0, 1, 2 };
         int result = maximumCount(arr);
         System.out.println("Maximum count of positive or negative numbers: " + result);
     }
