@@ -37,14 +37,61 @@ class LinkedLList { // User Define Data Strucure
         size++;
     }
 
-    void deleteAtHead(){
-        if(head == null) throw new Error("List is Empty!");
+    void deleteAtHead() {
+        if (head == null)
+            throw new Error("List is Empty!");
         head = head.next;
-        if(head == null) tail = null; // after next if head becomes null for 1 node.
+        if (head == null)
+            tail = null; // after next if head becomes null for 1 node.
         size--;
     }
-    
-    void Display(){
+
+    int Search(int val) {
+        if (head == null)
+            return -1;
+        Node temp = head;
+        int idx = 0;
+        while (temp != null) {
+            if (temp.val == val)
+                return idx;
+            temp = temp.next;
+            idx++;
+        }
+        return -1;
+    }
+
+    void insert(int idx, int val) {
+        if (idx < 0 || idx > size)
+            System.out.println("Invalid Index");
+        else if (idx == size)
+            addAtTail(val);
+        else if (idx == 0)
+            addAtHead(val);
+        else {
+            Node temp = head; // create the tempariry node to travel
+            // for loop to travel to the idx where we have to insert
+            for (int i = 0; i < idx - 1; i++) {
+                temp = temp.next;
+            }
+            Node t = new Node(val); // Create new node to insert on the index.
+            t.next = temp.next; // first humne naye node ko temp ke next node ke saath attach karna hai
+            temp.next = t;// phir hum temp node ko new node ke saath attach karenge.
+            size++;
+        }
+    }
+
+    int get(int idx) {
+        if (idx < 0 || idx >= size) {
+            throw new IndexOutOfBoundsException("Invalid Index: " + idx);
+        }
+        Node temp = head;
+        for (int i = 0; i < idx; i++) {
+            temp = temp.next;
+        }
+        return temp.val;
+    }
+
+    void Display() {
         Node temp = head;
         while (temp != null) {
             System.out.print(temp.val + " ");
@@ -53,6 +100,19 @@ class LinkedLList { // User Define Data Strucure
         System.out.println();
     }
 
+    void delete(int idx) {
+        if (idx < 0 || idx >= size) {
+            throw new IndexOutOfBoundsException("Invalid Index: " + idx);
+        }
+        else if(idx == 0) deleteAtHead();
+        Node temp = head;
+        for (int i = 0; i < idx - 1; i++) {
+            temp = temp.next;
+        }
+        temp.next = temp.next.next; // here we are inserting in the temp.next.next in to temp.next that's why the ele skip and we called as delete.
+        if(idx == size - 1) tail = temp; // we are deleting the tail;
+        size--;
+    }
 
 }
 
@@ -66,8 +126,14 @@ public class LinkedListDataStrucure {
         ll.addAtTail(50);
         ll.addAtHead(60);
         ll.Display();
-        ll.deleteAtHead();
-        ll.Display();
+        // ll.deleteAtHead();
+        // ll.Display();
         System.out.print(ll.size);
+        ll.insert(2, 1045);
+        ll.Display();
+        System.out.println(ll.Search(20));
+        System.out.println(ll.get(3));
+        ll.delete(3);
+        ll.Display();
     }
 }
